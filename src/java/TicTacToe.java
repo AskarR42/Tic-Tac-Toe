@@ -1,9 +1,11 @@
+package src.java;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-class TicTacToe {
+public class TicTacToe {
 
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     String input = "         "; //state of the game
     int player = 1; // 1 - first player, -1 - second player
@@ -22,7 +24,7 @@ class TicTacToe {
     boolean Wins(char c) {
         for (int i = 0; i < 3; i++) {
             if (input.substring(i * 3, i * 3 + 3).equals(String.valueOf(new char[] {c, c, c})) ||
-                    input.charAt(i) == c && input.charAt(i + 3) == c && input.charAt(i + 6) == c) {
+                input.charAt(i) == c && input.charAt(i + 3) == c && input.charAt(i + 6) == c) {
                 return true;
             }
         }
@@ -84,9 +86,3 @@ class TicTacToe {
     }
 }
 
-public class Main {
-    public static void main(String[] args) {
-        TicTacToe game = new TicTacToe();
-        game.run();
-    }
-}
